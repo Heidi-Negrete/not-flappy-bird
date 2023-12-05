@@ -1,17 +1,23 @@
 extends Node2D
 
-const SPAWN_BOUNDARY = Vector2(158, 700)
+const SPAWN_BOUNDARY: Vector2 = Vector2(158, 700)
+const SCROLL_SPEED: float = 30.0
 
 @export var pipes_scene: PackedScene
 
-@onready var pipe_timer = $PipeTimer
-@onready var pipe_container = $PipeContainer
+@onready var pipe_timer = $PipeTimer as Timer
+@onready var pipe_container = $PipeContainer as Node
+@onready var parallax_background = $ParallaxBackground as ParallaxBackground
 
 
 
 func _ready():
 	spawn_pipes()
 	pipe_timer.start()
+
+
+func _process(delta):
+	parallax_background.scroll_offset.x -= SCROLL_SPEED * delta
 
 
 func spawn_pipes():

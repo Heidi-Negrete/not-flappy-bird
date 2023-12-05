@@ -27,3 +27,5 @@ func boost_plane() -> void:
 func crash() -> void:
 	set_physics_process(false)
 	animation_player.play("crash")
+	await animation_player.animation_finished
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

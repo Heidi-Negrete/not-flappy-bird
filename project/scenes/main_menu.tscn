@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://pjtwt3fuvy4o"]
+[gd_scene load_steps=2 format=3 uid="uid://pjtwt3fuvy4o"]
+
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_lble7"]
 
 [node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_lble7")
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "CLICK ME LOL"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://o1nkmtsrkb3m"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_spo7c"]
+[ext_resource type="PackedScene" uid="uid://bpik2g28n6ew0" path="res://scenes/plane.tscn" id="1_yyu7x"]
+[ext_resource type="PackedScene" uid="uid://shgwdb0ki0w2" path="res://scenes/pipes.tscn" id="2_6kq4t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugduq"]
+size = Vector2(502, 20)
+
+[node name="Main" type="Node2D"]
+position = Vector2(116, 0)
+script = ExtResource("1_spo7c")
+pipes_scene = ExtResource("2_6kq4t")
+
+[node name="PipeTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(0, 850)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(237, 0)
+shape = SubResource("RectangleShape2D_ugduq")
+
+[node name="Plane" parent="." instance=ExtResource("1_yyu7x")]
+position = Vector2(133, 188)
+
+[node name="PipeContainer" type="Node" parent="."]
+
+[connection signal="timeout" from="PipeTimer" to="." method="_on_pipe_timer_timeout"]

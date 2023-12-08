@@ -55,6 +55,6 @@ shape = SubResource("RectangleShape2D_ugduq")
 [node name="PipeContainer" type="Node" parent="."]
 
 [node name="Plane" parent="." instance=ExtResource("1_yyu7x")]
-position = Vector2(133, 188)
+position = Vector2(64, 113)
 
 [connection signal="timeout" from="PipeTimer" to="." method="_on_pipe_timer_timeout"]

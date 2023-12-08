@@ -46,6 +46,7 @@ _data = {
 size = Vector2(14, 192)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8c6q2"]
+resource_local_to_scene = true
 shader = ExtResource("1_adr42")
 shader_parameter/flashState = 0.0
 shader_parameter/flashColor = Color(0.45098, 1, 1, 1)

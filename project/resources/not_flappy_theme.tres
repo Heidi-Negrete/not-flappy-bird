@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://3vstd7uh0u38"]
+
+[ext_resource type="FontFile" uid="uid://dq7u87os45fg2" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="1_p51k3"]
+[ext_resource type="FontFile" uid="uid://3bvh5bo63rl2" path="res://assets/fonts/gemunu-libre-v8-latin-700.ttf" id="2_24mnm"]
+[ext_resource type="StyleBox" uid="uid://bw58uvmb8g1p6" path="res://resources/hover_button.tres" id="3_rdwog"]
+[ext_resource type="StyleBox" uid="uid://c0rjbpj637o4w" path="res://resources/normal_button.tres" id="4_aw2i6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgn6w"]
+bg_color = Color(0.321569, 0, 0.521569, 1)
+
+[resource]
+BigLabel/base_type = &"Label"
+BigLabel/colors/font_color = Color(0.811765, 0.329412, 0.215686, 1)
+BigLabel/font_sizes/font_size = 48
+BigLabel/fonts/font = ExtResource("1_p51k3")
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("2_24mnm")
+Button/styles/hover = ExtResource("3_rdwog")
+Button/styles/normal = ExtResource("4_aw2i6")
+Button/styles/pressed = SubResource("StyleBoxFlat_xgn6w")

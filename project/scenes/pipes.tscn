@@ -12,6 +12,7 @@ script = ExtResource("1_1aq7w")
 [node name="UpperPipe" parent="." instance=ExtResource("2_07xoa")]
 position = Vector2(0, -92)
 rotation = -3.14159
+collision_layer = 2
 
 [node name="LowerPipe" parent="." instance=ExtResource("2_07xoa")]
 position = Vector2(0, 91)
@@ -19,4 +20,6 @@ position = Vector2(0, 91)
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(78, 0)
 
+[connection signal="body_entered" from="UpperPipe" to="." method="_on_upper_pipe_body_entered"]
+[connection signal="body_entered" from="LowerPipe" to="." method="_on_lower_pipe_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

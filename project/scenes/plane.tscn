@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bpik2g28n6ew0"]
+[gd_scene load_steps=12 format=3 uid="uid://bpik2g28n6ew0"]
 
 [ext_resource type="Texture2D" uid="uid://p27fndl8swcu" path="res://assets/plane/planes_sheet.png" id="1_cphqo"]
 [ext_resource type="Script" path="res://scenes/plane.gd" id="1_q26kr"]
+[ext_resource type="AudioStream" uid="uid://ddym6bp174mxn" path="res://assets/audio/engine.mp3" id="2_fh784"]
 
 [sub_resource type="Animation" id="Animation_cihlk"]
 length = 0.001
@@ -93,11 +94,16 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vtw1r"]
-radius = 21.0
-height = 44.0
+radius = 33.0
+height = 68.0
 
 [node name="Plane" type="CharacterBody2D"]
+collision_mask = 3
 script = ExtResource("1_q26kr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_fh784")
+autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -109,6 +115,6 @@ sprite_frames = SubResource("SpriteFrames_yhe4h")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, -2)
+position = Vector2(6, -2)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_vtw1r")
